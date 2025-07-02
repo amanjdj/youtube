@@ -8,7 +8,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,
+    // origin: process.env.CORS_ORIGIN,
+    origin: "*",
     credentials: true,
   })
 );
@@ -24,6 +25,8 @@ app.use(cookieParser());
 import userRouter from "./routes/user.routes.js";
 
 // routes declaaration
+
+console.log("✅ Mounting /api/v1/users routes...");
 
 app.use("/api/v1/users", userRouter);
 
