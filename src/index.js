@@ -5,7 +5,9 @@ import connectDB from "./db/index.js";
 import { app } from "./app.js";
 
 console.log("✅ Server file loaded at", new Date().toLocaleString());
-dotenv.config();
+dotenv.config({
+  path: "./.env",
+});
 
 connectDB()
   .then(() => {
